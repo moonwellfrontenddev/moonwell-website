@@ -3,220 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Moonwell — a free idle MMO</title>
-  <meta name="description" content="Moonwell is a free-to-play idle MMO with no pay-to-win and nothing to buy. Ever.">
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #13111b;
-      --text: #ece8f4;
-      --muted: #a29cb6;
-      --line: #292539;
-      --accent: #f0c062;
-      --good: #6fd49a;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    section { scroll-margin-top: 72px; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 18px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    }
-    main {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 32px 20px 64px;
-    }
-    h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 8px; }
-    h2 { font-size: 1.35rem; margin: 48px 0 12px; padding-top: 24px; border-top: 1px solid var(--line); }
-    h3 { font-size: 1.1rem; margin: 32px 0 8px; }
-    p { margin: 0 0 16px; }
-    a { color: var(--accent); }
-    .tagline { font-size: 1.2rem; color: var(--muted); margin-bottom: 24px; }
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 2px solid var(--accent);
-      border-radius: 6px;
-      color: var(--accent);
-      font-weight: 600;
-      text-decoration: none;
-      margin: 0 8px 8px 0;
-    }
-    .button.primary { background: var(--accent); color: var(--bg); }
-    ol, ul { padding-left: 1.3em; margin: 0 0 16px; }
-    li { margin-bottom: 10px; }
-    dt { font-weight: 600; margin-top: 16px; }
-    dd { margin: 4px 0 0; color: var(--muted); }
-    footer { margin-top: 64px; font-size: 0.9rem; color: var(--muted); }
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px 12px;
-      margin-top: -32px;
-      padding: 12px 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--line);
-    }
-    .brand { font-weight: 700; color: var(--text); text-decoration: none; margin-right: 8px; }
-    .links { display: flex; gap: 12px; }
-    .links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; white-space: nowrap; }
-    .links a:hover { color: var(--text); }
-    .links a.active { color: var(--accent); text-decoration: underline; text-underline-offset: 6px; }
-    .nav-donate {
-      margin-left: auto;
-      padding: 4px 14px;
-      border-radius: 6px;
-      background: var(--accent);
-      color: var(--bg);
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-    }
-    /* Phones: logo + buttons on the first row, swipeable links on the second */
-    @media (max-width: 640px) {
-      .links { order: 3; width: 100%; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
-      .links::-webkit-scrollbar { display: none; }
-      .links a.active { text-underline-offset: 4px; }
-    }
-    table { width: 100%; border-collapse: collapse; margin: 0 0 16px; }
-    th { text-align: left; font-size: 0.85rem; color: var(--muted); font-weight: 600; padding: 4px 0; border-bottom: 1px solid var(--line); }
-    td { padding: 8px 0; border-bottom: 1px solid var(--line); }
-    th:not(:first-child), td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
-    tr.total td { font-weight: 600; border-bottom: none; }
-    .bar { height: 18px; background: var(--line); border-radius: 9px; overflow: hidden; margin: 8px 0; }
-    .bar-fill { height: 100%; background: var(--accent); width: 0; }
-    .bar-fill.done { background: var(--good); }
-    .small { font-size: 0.95rem; color: var(--muted); }
-    /* Images. To add a screenshot, replace a <div class="placeholder">…</div>
-       with <img src="images/your-file.png" alt="Short description">. */
-    .shot { margin: 24px 0; }
-    .shot img, .placeholder {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .shot img { aspect-ratio: auto; height: auto; }
-    .features li { margin: 6px 0; }
-    .placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px dashed var(--line);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    .shot figcaption { margin-top: 6px; font-size: 0.9rem; color: var(--muted); }
-    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0; }
-    .gallery .shot { margin: 0; }
-    @media (max-width: 480px) { .gallery { grid-template-columns: 1fr; } }
-    blockquote {
-      margin: 0 0 24px;
-      padding: 4px 0 4px 20px;
-      border-left: 4px solid var(--accent);
-      font-size: 1.2rem;
-      font-style: italic;
-    }
-  </style>
+  <title>Moonwell &mdash; a free idle MMO</title>
+  <meta name="description" content="A free fantasy idle MMO. Optional donations offer cosmetic chat titles only. Never pay-to-win.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main id="top">
-
-  <nav>
-    <a class="brand" href="#top">🌙 Moonwell</a>
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#why">Why</a>
-      <a href="#promises">Promises</a>
-      <a href="#transparency">Where the money goes</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <a class="nav-donate" href="https://ko-fi.com/projectmoonwell" target="_blank" rel="noopener">Donate</a>
-  </nav>
-
-  <header style="margin-top: 40px;">
-    <h1>🌙 Moonwell</h1>
-    <p class="tagline">A free idle MMO. No pay-to-win. Nothing to buy. Ever.</p>
-    <!-- Hidden until real links exist:
-    <a class="button primary" href="DOWNLOAD_OR_PLAY_LINK">Play for free</a>
-    <a class="button" href="https://discord.gg/YOUR_INVITE" target="_blank" rel="noopener">Discord</a>
-    -->
-    <a class="button" href="https://x.com/TouchGrassGames" target="_blank" rel="noopener">Twitter / X</a>
-
-    <!-- Main image: the best screenshot or key art of the game -->
-  </header>
-
-  <section id="about">
-    <h2>What is Moonwell?</h2>
-    <p>
-      Moonwell is an online idle game you share with other players. You choose what
-      your character does, and anything you set to repeat keeps going while you're away.
-      When you come back you can trade, team up, and progress alongside everyone else
-      in the world.
-    </p>
-    <p>
-      Play for five minutes a day or five hours. Either way, you're on the same
-      footing as every other player.
-    </p>
-
-
-    <h3>What's in Moonwell</h3>
-    <ul class="features">
-      <li>Life in Moonwell, a city beneath two moons: eat, rent a room, train, and take on guild requests.</li>
-      <li>Gathering and crafting: chop wood, mine ore, and forge your own gear.</li>
-      <li>Fights in the zones outside the walls, alone or in a party of up to four.</li>
-      <li>Player guilds with a shared vault, direct trades, and a market board.</li>
-      <li>Chat with everyone in town, your guild, or a single resident.</li>
-    </ul>
-    <p><strong>Coming in the next update:</strong> a chat window along the bottom of the screen with Global, guild, group and whisper tabs; skill prestige with stars, up to level 99; and patch notes right on the sign-in screen.</p>
-  </section>
-
-  <section id="why">
-    <h2>Why I made Moonwell</h2>
-    <p>
-      As a game developer, I want to simulate a fantasy world economy where real
-      players shape the city. I've always had a great passion for economics, and
-      I feel like this is a great way to learn.
-    </p>
-    <p>
-      My end goal is to quit my job and work on Moonwell full-time.
-    </p>
-  </section>
-
-  <section id="promises">
-    <h2>My promises to you</h2>
-    <blockquote>
-      "Your status and wealth in real life is not supposed to affect status and
-      wealth in the game. Everyone starts out equal."
-    </blockquote>
-    <p>These are commitments I make to every player, in plain words:</p>
-    <ol>
-      <li><strong>Moonwell is free, forever.</strong> No purchase to play, no subscription, no premium tier.</li>
-      <li><strong>No pay-to-win.</strong> You can't buy power, levels, items, or progress. Not now, not later.</li>
-      <li><strong>No paid mechanics at all.</strong> No in-game shop, no loot boxes, no premium currency, no paid skips or boosts.</li>
-      <li><strong>Donations get you nothing in-game.</strong> A donor and a non-donor are exactly equal in the game.</li>
-      <li><strong>No ads.</strong> I won't put ads in the game.</li>
-      <li><strong>Open books.</strong> I publish what Moonwell costs to run and how much has been donated, every month, right on this page.</li>
-      <li><strong>I'll be honest with you.</strong> If anything about how Moonwell is funded ever needs to change, I'll tell players openly and in advance — and it will never break the promises above.</li>
-    </ol>
-  </section>
-
-  <section id="transparency">
-    <h2>Where the money goes</h2>
-    <p>
-      Moonwell runs only on voluntary donations. I want you to see exactly what
-      it costs to run, how much has come in, and what happens to every donation.
-    </p>
+<nav aria-label="Main navigation">
+  <a class="brand" href="./">Moonwell</a>
+  <div class="links"><a href="play.html">Web game</a><a href="./#support">Support</a></div>
+</nav>
+<header class="hero">
+  <p class="eyebrow">A fantasy life, at your pace</p>
+  <h1>Find your place<br>in Moonwell.</h1>
+  <p class="tagline">A free idle MMO. Build a life in a city beneath two moons, alongside other players.</p>
+  <a class="button primary" href="play.html">Web version &middot; Coming soon</a>
+  <p class="small">Free to play. No paid power or progress.</p>
+</header>
+<section id="about">
+  <h2>A little adventure. A world to share.</h2>
+  <p>Train skills, gather and craft, take on guild requests, and explore beyond the city walls. Set activities to repeat and return to your progress.</p>
+</section>
+<section id="support">
+  <h2>Support Moonwell</h2>
+  <p>Donations are optional. <strong>Cosmetic chat titles are the only donation reward.</strong> No items, currency, boosts, exclusive gameplay, or other perks.</p>
+  <p class="small">Supporter &middot; Patron &middot; Benefactor<br>Choose an earned title or hide it. Titles never affect gameplay.</p>
+  <a class="button" href="https://ko-fi.com/projectmoonwell" target="_blank" rel="noopener">Support on Ko-fi</a>
+  <details>
+    <summary>How donation titles work</summary>
+    <p>Verified, linked one-time USD tips add up across your account: $1 earns Supporter, $5 earns Patron, and $20 earns Benefactor.</p>
+    <p>When donation tracking is available in-game, open Chat &gt; Donation titles, refresh your details, and copy your account code into the message on every Ko-fi tip. Refresh after payment; visiting Ko-fi alone grants nothing.</p>
+    <p>Choose an earned title or no title in Settings &gt; Chat title. Memberships, shop orders, commissions, and non-USD payments do not count toward titles.</p>
+  </details>
+  <details id="transparency">
+    <summary>Funding &amp; running costs</summary>
+    <p class="small">These figures are manually maintained, not a live payment feed.</p>
     <p class="small" id="last-updated"></p>
-
     <h3>This month's goal</h3>
     <p id="goal-text"><strong>…</strong></p>
     <div class="bar" role="progressbar" aria-label="Donation goal progress" aria-valuemin="0" aria-valuemax="100">
@@ -241,221 +63,32 @@
       Donations are Moonwell's only income. If that ever changes, it will show up in this table.
     </p>
 
-    <h3>If donations go over the goal</h3>
-    <p>Extra donations are used in this order:</p>
-    <ol>
-      <li>
-        <strong>Keep the servers running longer.</strong> Anything above the monthly
-        goal goes into a reserve that pays for future months.
-      </li>
-      <li>
-        <strong>Put money back into the game.</strong> Once the reserve covers a full
-        year of running costs, extra donations go into Moonwell itself — like paying
-        artists to replace the AI art with art made by real people.
-      </li>
-      <li>
-        <strong>Work on Moonwell full-time.</strong> I really hope that one day the game
-        can pay my rent so I can quit my job and work on it full-time. Right now I take
-        nothing from donations for myself. If that ever changes, it will be shown here.
-      </li>
-    </ol>
-    <p>No matter what, Moonwell stays fully free, forever.</p>
 
+    <p>Extra donations build a reserve for future costs. After a year is covered, they go back into the game, including human-made art. I currently take no personal income from donations; any change will be disclosed here.</p>
     <p id="reserve-text"></p>
     <div class="bar" role="progressbar" aria-label="Reserve progress toward one year of costs" aria-valuemin="0" aria-valuemax="100">
       <div class="bar-fill" id="reserve-fill"></div>
     </div>
     <p class="small" id="reserve-status"></p>
 
-    <h3>If donations fall short</h3>
-    <p>
-      I cover the difference myself for as long as I can. The game won't
-      shut down without plenty of warning, and it won't start selling things to make up the gap.
-    </p>
 
+    <p>If donations fall short, I cover the difference as long as I can. Any shutdown would be announced in advance.</p>
     <h3>Past months</h3>
     <table id="history-table">
       <thead><tr><th>Month</th><th>Costs</th><th>Donated</th><th>Covered?</th></tr></thead>
       <tbody></tbody>
     </table>
 
-    <p>
-      <strong>Donating is completely optional and doesn't unlock anything.</strong>
-      If you can't donate, that's okay — playing and telling your friends helps just as much.
-    </p>
-  </section>
 
-  <script>
-    // ============================================================
-    //  EDIT THESE NUMBERS — this is the only part you need to touch.
-    //  Update "raised" and "lastUpdated" whenever new donations come in.
-    //  At the start of a new month, move the old month into "history".
-    // ============================================================
-    const FUNDING = {
-      currency: "$",
-      lastUpdated: "October 20, 2026",
-      month: "October 2026",
-      raised: 0,              // donations received so far this month
-      reserve: 0,             // leftover from previous months
-      costs: [
-        // "note" is optional and shows in small text under the name.
-        { name: "Game server",                   amount: 20 },
-        { name: "GitHub Pro",                    amount: 4,  note: "Storing the code (tests now run on my own computer)" },
-        { name: "Sign-in (Firebase)",            amount: 0,  note: "Free for now — this will go up as more players join. The game\u2019s database and backups run on the game server." },
-        { name: "AI tools (LLMs)",               amount: 50 },
-        { name: "Domain name",                   amount: 1,  note: "$12 per year, shown here as a monthly cost" },
-      ],
-      otherIncome: [
-        // e.g. { name: "Merch", amount: 0 }  — currently none
-      ],
-      history: [
-        // newest first, e.g.
-        // { month: "September 2026", costs: 0, donated: 0 },
-      ],
-    };
-    // ============================================================
-
-    (function () {
-      const money = n => FUNDING.currency + n.toLocaleString(undefined, { maximumFractionDigits: 2 });
-      const goal = FUNDING.costs.reduce((sum, c) => sum + c.amount, 0);
-      const pct = goal > 0 ? Math.min(100, Math.round(FUNDING.raised / goal * 100)) : 0;
-
-      function addRow(tbody, cells, className) {
-        const row = tbody.insertRow();
-        if (className) row.className = className;
-        cells.forEach(text => { row.insertCell().textContent = text; });
-      }
-
-      document.getElementById("last-updated").textContent = "Last updated: " + FUNDING.lastUpdated;
-
-      // Costs
-      const costs = document.querySelector("#cost-table tbody");
-      FUNDING.costs.forEach(c => {
-        addRow(costs, [c.name, money(c.amount)]);
-        if (c.note) {
-          const note = document.createElement("div");
-          note.className = "small";
-          note.textContent = c.note;
-          costs.rows[costs.rows.length - 1].cells[0].appendChild(note);
-        }
-      });
-      addRow(costs, ["Total", money(goal)], "total");
-
-      // Income
-      const income = document.querySelector("#income-table tbody");
-      const otherTotal = FUNDING.otherIncome.reduce((sum, i) => sum + i.amount, 0);
-      addRow(income, ["Player donations", money(FUNDING.raised)]);
-      FUNDING.otherIncome.forEach(i => addRow(income, [i.name, money(i.amount)]));
-      if (FUNDING.otherIncome.length === 0) addRow(income, ["Anything else (ads, sales, sponsors)", money(0)]);
-      addRow(income, ["Total", money(FUNDING.raised + otherTotal)], "total");
-
-      // Goal + progress bar
-      document.getElementById("goal-text").innerHTML =
-        "<strong>" + money(FUNDING.raised) + "</strong> donated of " + money(goal) + " needed for " + FUNDING.month;
-      const fill = document.getElementById("bar-fill");
-      fill.style.width = pct + "%";
-      fill.parentElement.setAttribute("aria-valuenow", pct);
-      const status = document.getElementById("goal-status");
-      if (goal > 0 && FUNDING.raised >= goal) {
-        fill.classList.add("done");
-        status.textContent = "Goal reached — the servers are covered this month. Thank you! 💚 Anything extra goes into the reserve.";
-      } else {
-        status.textContent = pct + "% of the way there. " + money(Math.max(0, goal - FUNDING.raised)) + " still needed to cover this month\'s costs.";
-      }
-
-      // Reserve
-      const yearGoal = goal * 12;
-      const months = goal > 0 ? (FUNDING.reserve / goal).toFixed(1) : "0";
-      const reservePct = yearGoal > 0 ? Math.min(100, Math.round(FUNDING.reserve / yearGoal * 100)) : 0;
-      document.getElementById("reserve-text").innerHTML =
-        "Current reserve: <strong>" + money(FUNDING.reserve) + "</strong> of " + money(yearGoal) +
-        " needed for a full year of running costs.";
-      const reserveFill = document.getElementById("reserve-fill");
-      reserveFill.style.width = reservePct + "%";
-      reserveFill.parentElement.setAttribute("aria-valuenow", reservePct);
-      const reserveStatus = document.getElementById("reserve-status");
-      if (yearGoal > 0 && FUNDING.reserve >= yearGoal) {
-        reserveFill.classList.add("done");
-        reserveStatus.textContent = "A full year is covered! 🎉 Extra donations now go back into the game.";
-      } else {
-        reserveStatus.textContent = "About " + months + " of 12 months covered.";
-      }
-
-      // History
-      const history = document.querySelector("#history-table tbody");
-      if (FUNDING.history.length === 0) {
-        addRow(history, ["No past months yet — Moonwell is just getting started.", "", "", ""]);
-      }
-      FUNDING.history.forEach(h => addRow(history, [
-        h.month, money(h.costs), money(h.donated), h.donated >= h.costs ? "✅ Yes" : "❌ No",
-      ]));
-    })();
-
-    // Menu links: scroll to the section directly, so they also work in
-    // previews and embedded viewers that block normal #anchor jumps.
-    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-      link.addEventListener("click", e => {
-        const target = document.getElementById(link.getAttribute("href").slice(1));
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
-        try { history.replaceState(null, "", link.getAttribute("href")); } catch (err) {}
-      });
-    });
-
-    // Underline the menu link for the section you're currently reading
-    (function () {
-      const links = [...document.querySelectorAll(".links a")];
-      function update() {
-        let current = null;
-        links.forEach(a => {
-          const section = document.getElementById(a.getAttribute("href").slice(1));
-          if (section && section.getBoundingClientRect().top < 120) current = a;
-        });
-        links.forEach(a => a.classList.toggle("active", a === current));
-      }
-      addEventListener("scroll", update, { passive: true });
-      update();
-    })();
-  </script>
-
-  <section id="faq">
-    <h2>Questions</h2>
-    <dl>
-      <dt>Is it really free?</dt>
-      <dd>Yes. Everything in Moonwell is available to every player for free.</dd>
-
-      <dt>How do you make money then?</dt>
-      <dd>Moonwell's only income is voluntary donations from players who want to support the game — you can see every number above. I also work a full-time job, so for now I can cover all the costs myself and still get by. Donations help Moonwell grow, but the game doesn't depend on them to stay online.</dd>
-
-      <dt>Do donors get a badge, cosmetic, or bonus?</dt>
-      <dd>No. Donations give nothing in-game, so the game stays equal for everyone.</dd>
-
-      <dt>Do you get paid from donations?</dt>
-      <dd>Not right now. Donations go to running costs first, then the reserve, then the game. My long-term hope is to earn enough to pay rent and work on Moonwell full-time — if that ever happens, it will be shown openly on this page, and the game will still be free.</dd>
-
-      <dt>Do I need to keep the game open?</dt>
-      <dd>No. Anything you set to repeat keeps going while you're away, and you come back to what it earned.</dd>
-
-      <dt>When Steam release?</dt>
-      <dd>I've already paid the Steam fee and could release Moonwell on Steam today, but I'd rather wait for the 1.0 update. I can assure you it will be on Steam eventually with achievements, and having Steam items would be also very cool to have but not sure of the requirements right now.</dd>
-
-      <dt>Are the images AI?</dt>
-      <dd>Yes. I'm a software developer, not an artist, and at current rates I would go bankrupt trying to get art done for this game. I want to support human artists to the best of my abilities, so if you're an artist and want to work on this game, <a href="https://x.com/TouchGrassGames" target="_blank" rel="noopener">send me a message on X</a> and we can discuss the future of Moonwell!</dd>
-    </dl>
-  </section>
-
-
-  <footer>
-    <p>© 2026 Moonwell. Made by one developer who just wants to make a fair game.</p>
-    <p>
-      <!-- Hidden until a real invite exists: <a href="https://discord.gg/YOUR_INVITE" target="_blank" rel="noopener">Discord</a> · -->
-      <a href="https://x.com/TouchGrassGames" target="_blank" rel="noopener">Twitter / X</a> ·
-      <a href="https://ko-fi.com/projectmoonwell" target="_blank" rel="noopener">Ko-fi</a>
-    </p>
-    <!-- TODO: add a contact email so players can ask about the numbers -->
-  </footer>
+  </details>
+</section>
+<footer>
+  <p>&copy; 2026 Moonwell &middot; Made by one developer.</p>
+  <a href="https://x.com/TouchGrassGames" target="_blank" rel="noopener">Twitter / X</a> &middot;
+  <a href="https://ko-fi.com/projectmoonwell" target="_blank" rel="noopener">Ko-fi</a>
+</footer>
 
 </main>
+<script src="funding.js"></script>
 </body>
 </html>

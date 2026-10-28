@@ -1,0 +1,133 @@
+    :root {
+      color-scheme: dark;
+      --bg: #13111b;
+      --text: #ece8f4;
+      --muted: #a29cb6;
+      --line: #292539;
+      --accent: #f0c062;
+      --good: #6fd49a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    section { scroll-margin-top: 72px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 18px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 8px; }
+    h2 { font-size: 1.35rem; margin: 48px 0 12px; padding-top: 24px; border-top: 1px solid var(--line); }
+    h3 { font-size: 1.1rem; margin: 32px 0 8px; }
+    p { margin: 0 0 16px; }
+    a { color: var(--accent); }
+    .tagline { font-size: 1.2rem; color: var(--muted); margin-bottom: 24px; }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 8px 8px 0;
+    }
+    .button.primary { background: var(--accent); color: var(--bg); }
+    ol, ul { padding-left: 1.3em; margin: 0 0 16px; }
+    li { margin-bottom: 10px; }
+    dt { font-weight: 600; margin-top: 16px; }
+    dd { margin: 4px 0 0; color: var(--muted); }
+    footer { margin-top: 64px; font-size: 0.9rem; color: var(--muted); }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      margin-top: -32px;
+      padding: 12px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { font-weight: 700; color: var(--text); text-decoration: none; margin-right: 8px; }
+    .links { display: flex; gap: 12px; }
+    .links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; white-space: nowrap; }
+    .links a:hover { color: var(--text); }
+    .links a.active { color: var(--accent); text-decoration: underline; text-underline-offset: 6px; }
+    .nav-donate {
+      margin-left: auto;
+      padding: 4px 14px;
+      border-radius: 6px;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    /* Phones: logo + buttons on the first row, swipeable links on the second */
+    @media (max-width: 640px) {
+      .links { order: 3; width: 100%; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+      .links::-webkit-scrollbar { display: none; }
+      .links a.active { text-underline-offset: 4px; }
+    }
+    table { width: 100%; border-collapse: collapse; margin: 0 0 16px; }
+    th { text-align: left; font-size: 0.85rem; color: var(--muted); font-weight: 600; padding: 4px 0; border-bottom: 1px solid var(--line); }
+    td { padding: 8px 0; border-bottom: 1px solid var(--line); }
+    th:not(:first-child), td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+    tr.total td { font-weight: 600; border-bottom: none; }
+    .bar { height: 18px; background: var(--line); border-radius: 9px; overflow: hidden; margin: 8px 0; }
+    .bar-fill { height: 100%; background: var(--accent); width: 0; }
+    .bar-fill.done { background: var(--good); }
+    .small { font-size: 0.95rem; color: var(--muted); }
+    /* Images. To add a screenshot, replace a <div class="placeholder">…</div>
+       with <img src="images/your-file.png" alt="Short description">. */
+    .shot { margin: 24px 0; }
+    .shot img, .placeholder {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .shot img { aspect-ratio: auto; height: auto; }
+    .features li { margin: 6px 0; }
+    .placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .shot figcaption { margin-top: 6px; font-size: 0.9rem; color: var(--muted); }
+    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0; }
+    .gallery .shot { margin: 0; }
+    @media (max-width: 480px) { .gallery { grid-template-columns: 1fr; } }
+    blockquote {
+      margin: 0 0 24px;
+      padding: 4px 0 4px 20px;
+      border-left: 4px solid var(--accent);
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+.hero { padding: 64px 0 32px; }
+.eyebrow { color: var(--accent); text-transform: uppercase; font-size: .85rem; letter-spacing: .08em; }
+h1 { font-size: clamp(2.4rem, 8vw, 3.5rem); letter-spacing: -.035em; }
+nav { position: static; margin-top: 0; }
+.brand { margin-right: auto; }
+.links { flex-wrap: wrap; }
+.small, .tagline, .links a, footer { color: #b4adc8; }
+details { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+details[open] summary { margin-bottom: 18px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+@media (max-width: 640px) { .links { order: initial; width: auto; overflow: visible; padding: 0; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
